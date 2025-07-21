@@ -8,35 +8,69 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Material You Blue Pastel Theme */
+    --background: 210 100% 98%;
+    --foreground: 210 40% 8%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 8%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 8%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary - Soft Blue Palette */
+    --primary: 210 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 210 100% 85%;
+    --primary-dark: 210 100% 35%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Light Blue Accents */
+    --secondary: 210 100% 95%;
+    --secondary-foreground: 210 100% 25%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Surface colors with Material You elevation */
+    --surface: 210 100% 98%;
+    --surface-variant: 210 50% 96%;
+    --on-surface: 210 40% 8%;
+    --on-surface-variant: 210 20% 35%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 50% 96%;
+    --muted-foreground: 210 20% 45%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --accent: 200 100% 85%;
+    --accent-foreground: 200 100% 20%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --radius: 0.5rem;
+    --success: 120 60% 50%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 45 100% 60%;
+    --warning-foreground: 0 0% 100%;
+
+    --border: 210 40% 88%;
+    --input: 210 40% 90%;
+    --ring: 210 100% 50%;
+
+    /* Material Design radius system */
+    --radius: 0.75rem;
+    --radius-sm: 0.5rem;
+    --radius-lg: 1rem;
+
+    /* Elevation shadows */
+    --shadow-1: 0 1px 3px 0 hsl(210 40% 8% / 0.12), 0 1px 2px 0 hsl(210 40% 8% / 0.24);
+    --shadow-2: 0 3px 6px 0 hsl(210 40% 8% / 0.16), 0 2px 4px 0 hsl(210 40% 8% / 0.08);
+    --shadow-3: 0 10px 20px 0 hsl(210 40% 8% / 0.19), 0 6px 6px 0 hsl(210 40% 8% / 0.23);
+    --shadow-4: 0 14px 28px 0 hsl(210 40% 8% / 0.25), 0 10px 10px 0 hsl(210 40% 8% / 0.22);
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-dark)));
+    --gradient-surface: linear-gradient(145deg, hsl(var(--surface)), hsl(var(--surface-variant)));
+
+    /* Animation easing */
+    --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+    --ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
 
     --sidebar-background: 0 0% 98%;
 
