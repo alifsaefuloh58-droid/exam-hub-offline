@@ -18,7 +18,7 @@ const AdminPanel = () => {
 
         {/* Main Content */}
         <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
-          <TabsList className="grid w-full grid-cols-4 lg:w-auto lg:grid-cols-4">
+          <TabsList className="grid w-full grid-cols-4 bg-surface-variant border border-outline-variant rounded-lg p-1">
             <TabsTrigger value="exams" className="flex items-center gap-2">
               <BookOpen className="h-4 w-4" />
               <span className="hidden sm:inline">Soal</span>
