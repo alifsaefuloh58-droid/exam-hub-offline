@@ -3,9 +3,69 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { BookOpen, Users, Award, Plus, Settings } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 
 const AdminPanel = () => {
   const [activeTab, setActiveTab] = useState("exams");
+  const { toast } = useToast();
+
+  const handleCreateNewSet = () => {
+    toast({
+      title: "Buat Set Soal Baru",
+      description: "Fitur ini akan segera tersedia",
+    });
+  };
+
+  const handleEditExam = (examId: number) => {
+    toast({
+      title: "Edit Ujian",
+      description: `Mengedit Set Ujian ${examId}`,
+    });
+  };
+
+  const handlePreviewExam = (examId: number) => {
+    toast({
+      title: "Preview Ujian", 
+      description: `Melihat preview Set Ujian ${examId}`,
+    });
+  };
+
+  const handleDeleteExam = (examId: number) => {
+    toast({
+      title: "Hapus Ujian",
+      description: `Set Ujian ${examId} akan dihapus`,
+      variant: "destructive",
+    });
+  };
+
+  const handleAddStudent = () => {
+    toast({
+      title: "Tambah Siswa",
+      description: "Fitur tambah siswa akan segera tersedia",
+    });
+  };
+
+  const handleEditStudent = (studentId: number) => {
+    toast({
+      title: "Edit Siswa",
+      description: `Mengedit data Siswa ${studentId}`,
+    });
+  };
+
+  const handleDeleteStudent = (studentId: number) => {
+    toast({
+      title: "Hapus Siswa",
+      description: `Siswa ${studentId} akan dihapus`,
+      variant: "destructive",
+    });
+  };
+
+  const handleEditSettings = () => {
+    toast({
+      title: "Edit Pengaturan",
+      description: "Fitur pengaturan akan segera tersedia",
+    });
+  };
 
   return (
     <div className="min-h-screen bg-gradient-surface">
@@ -41,7 +101,7 @@ const AdminPanel = () => {
           <TabsContent value="exams" className="space-y-6">
             <div className="flex justify-between items-center">
               <h2 className="text-2xl font-semibold">Manajemen Soal</h2>
-              <Button variant="filled" className="flex items-center gap-2">
+              <Button variant="filled" className="flex items-center gap-2" onClick={handleCreateNewSet}>
                 <Plus className="h-4 w-4" />
                 Buat Set Soal Baru
               </Button>
@@ -68,9 +128,9 @@ const AdminPanel = () => {
                         Dibuat: 15 Jan 2024
                       </div>
                       <div className="flex gap-2">
-                        <Button variant="tonal" size="sm">Edit</Button>
-                        <Button variant="outline" size="sm">Preview</Button>
-                        <Button variant="destructive" size="sm">Hapus</Button>
+                        <Button variant="tonal" size="sm" onClick={() => handleEditExam(exam)}>Edit</Button>
+                        <Button variant="outline" size="sm" onClick={() => handlePreviewExam(exam)}>Preview</Button>
+                        <Button variant="destructive" size="sm" onClick={() => handleDeleteExam(exam)}>Hapus</Button>
                       </div>
                     </div>
                   </CardContent>
@@ -83,7 +143,7 @@ const AdminPanel = () => {
           <TabsContent value="students" className="space-y-6">
             <div className="flex justify-between items-center">
               <h2 className="text-2xl font-semibold">Manajemen Siswa</h2>
-              <Button variant="filled" className="flex items-center gap-2">
+              <Button variant="filled" className="flex items-center gap-2" onClick={handleAddStudent}>
                 <Plus className="h-4 w-4" />
                 Tambah Siswa
               </Button>
@@ -103,8 +163,8 @@ const AdminPanel = () => {
                         <div className="text-sm text-on-surface-variant">username: siswa{student}</div>
                       </div>
                       <div className="flex gap-2">
-                        <Button variant="outline" size="sm">Edit</Button>
-                        <Button variant="destructive" size="sm">Hapus</Button>
+                        <Button variant="outline" size="sm" onClick={() => handleEditStudent(student)}>Edit</Button>
+                        <Button variant="destructive" size="sm" onClick={() => handleDeleteStudent(student)}>Hapus</Button>
                       </div>
                     </div>
                   ))}
@@ -161,7 +221,7 @@ const AdminPanel = () => {
                       <span>Auto submit</span>
                       <span className="text-primary font-medium">Aktif</span>
                     </div>
-                    <Button variant="tonal" size="sm">Edit Pengaturan</Button>
+                    <Button variant="tonal" size="sm" onClick={handleEditSettings}>Edit Pengaturan</Button>
                   </div>
                 </CardContent>
               </Card>
